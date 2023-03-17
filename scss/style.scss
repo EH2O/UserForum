@@ -1,0 +1,93 @@
+@use "reset";
+
+
+.mainContent {
+    background-color: rgb(204, 204, 204);
+    width: min(120ch, 100vw - 2rem);
+    margin-inline: auto;
+    padding-bottom: 10rem;
+    margin-top: 0;
+    padding-top: 32px;
+
+}
+.mainContent > ul{
+    margin-top: 0;
+
+    padding: 0 2rem;
+    li{
+        margin-bottom: 32px;
+        border: 2px;
+        border-style: solid;
+        list-style-type: none;
+        background-color: rgb(136, 136, 136);
+        border-color: rgb(179, 186, 192);
+        border-radius: 0.2rem;
+
+    }
+}
+.post {
+    padding: 0 2rem;
+}
+
+.navbar {
+    background-color: rgb(109, 109, 109);
+
+    
+    &__inner {
+        width: min(120ch, 100vw - 2rem);
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 4rem;
+
+    }
+    &__button {
+        background-color: transparent;
+
+        @media (min-width: 600px) {
+            display: none;
+        }
+    }
+
+    &__collapse {
+        @media (max-width: 599px) {
+            display: none;
+        }
+        > ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+        &--show {
+            display: block;
+            width: 100%;
+            > ul {
+                flex-direction: column;
+                padding: 0;
+            }
+        }
+    }
+}
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+.center{
+    text-align: center;
+    font-size: x-large;
+}
+.info{
+    font-size: small;
+    color: gray
+}
+.textInpus{
+    rows: 60;
+    cols: 10;
+}
+
