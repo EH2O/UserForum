@@ -1,13 +1,17 @@
 {% extends "layout.njk" %}
 {% block  content %}
 
-<form action="/login" method="POST">
+
+<form action="/login" method="POST" class="login">
     <label for="username">Användarnamn</label>
     <input type="text" name="username" id="username">
     <label for="password">Lösenord</label>
-    <input type="password" name="password" id="password">
-    <button type="submit">Login</button>
+    <input type="password" name="password" id="password" class="password">
+      <p>{{msg}}</p>
+    <button type="submit">Login</button> 
+  
+ 
 </form>
-<h> </h>
+
 
 {% endblock %}

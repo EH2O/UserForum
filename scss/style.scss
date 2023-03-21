@@ -1,8 +1,10 @@
 @use "reset";
 
-
+body{
+    background-color: #82CD47;
+}
 .mainContent {
-    background-color: rgb(204, 204, 204);
+    background-color: #54B435;
     width: min(120ch, 100vw - 2rem);
     margin-inline: auto;
     padding-bottom: 10rem;
@@ -19,8 +21,8 @@
         border: 2px;
         border-style: solid;
         list-style-type: none;
-        background-color: rgb(136, 136, 136);
-        border-color: rgb(179, 186, 192);
+        background-color: #F0FF42;
+        border-color: #379237;
         border-radius: 0.2rem;
 
     }
@@ -30,8 +32,9 @@
 }
 
 .navbar {
-    background-color: rgb(109, 109, 109);
-
+    background-color: #F0FF42;
+    border-style: solid;
+    border-color: #379237;
     
     &__inner {
         width: min(120ch, 100vw - 2rem);
@@ -91,3 +94,20 @@
     cols: 10;
 }
 
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 20rem;
+    .password{
+        margin: 0rem 0 2rem 0 ;
+    }
+
+}
+.logo{
+    img{
+    width: 50px;
+    height: 50px; 
+    }
+
+}

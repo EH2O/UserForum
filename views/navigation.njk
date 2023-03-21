@@ -1,26 +1,36 @@
 
     <nav class="navbar">
         <div class="navbar__inner container">
-            <a href="/" class="logo">Super</a>
+            <a href="/" class="logo"><img src="images/SlimeLogo.gif" alt="fin logo på en slime"></a>
             <button class="navbar__button" aria-label="Open menu">
                 <p> Test </p>
             </button>
             <div class="navbar__collapse">
                 <ul class="menu">
-               
+                        <li>
+                           <a href="/">Forum</a>
+                        </li>
+
+                    {% if loggedin %}
+                
                         <li>
                            <a href="/new">New post</a>
                         </li>
                         <li>
-                           <a href="/">forum</a>
+                            <a href="/logout"> Logout</a>
                         </li>
+
+                    {% else %}
+
+                    
+
                         <li>
                            <a href="/login">Login</a>
                         </li>
                         <li>
                            <a href="/register">Register</a>
                         </li>
-                
+                    {% endif %}
                 
                 </ul>
             </div>
