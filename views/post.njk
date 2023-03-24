@@ -3,8 +3,8 @@
 
 <div class="post">
     
-    <h1 class="center"> {{row.title}}</h1>
-    <p class="text">{{row.content}}</p>
+    <h1 class="center"> {{row.title | safe}}</h1>
+    <p class="text">{{row.content| safe}}</p>
     <p class="text">  -{{row.name}}</p>
     <p class="info"> {{row.createdAt}}</p>
   

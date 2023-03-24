@@ -181,4 +181,12 @@ body {
   height: 50px;
 }
 
+.reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 20rem;
+  gap: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 {% block  content %}
 
-<form action="/register" method="POST">
+<form action="/register" method="POST" class="reg">
     <label for="username">Användarnamn</label>
     <input type="text" name="username" id="username">
     <label for="password">Lösenord</label>
@@ -9,6 +9,7 @@
     <label for="passwordConfirmation">Konfirmera lösenord</label>
     <input type="password" name="passwordConfirmation" id="passwordConfirmation">
     <button type="submit">Register</button>
+    <p>{{msg}}</p>
 </form>
 
 {% endblock %}
