@@ -20,7 +20,7 @@ module.exports = router;
 
 
 router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT eho02forum.*, eho02users.name FROM eho02forum JOIN eho02users ON eho02forum.authorId = eho02users.id ORDER BY id DESC LIMIT 5");
+    const [rows] = await promisePool.query("SELECT eho02forum.*, eho02users.name FROM eho02forum JOIN eho02users ON eho02forum.authorId = eho02users.id ORDER BY id DESC LIMIT 20");
     res.render('index.njk', {
         rows: rows,
         title: 'Forum',
@@ -38,7 +38,7 @@ router.get('/login', function (req, res, next) {
 
 router.post('/login', async function (req, res, next) {
     const { username, password } = req.body;
-
+    errors = [];
     if (!username) {
         errors.push('Username is Required')
     }
@@ -93,6 +93,9 @@ router.post('/register', async function(req, res, next){
     if (!username) {
       errors.push('Username is Required')
     }
+//    if(!validator.isAlphanumeric(username [locale, options])){
+  //      errors.push('Username can only contain Letters and Numbers ')
+   // }
 
     if (!password) {
        errors.push('Password is Required')
@@ -157,7 +160,7 @@ router.get('/logout', async function(req, res, next){
 router.post('/new', async function (req, res, next) {
     console.log(req.body)
     const {title, content } = req.body;
-        
+    errors = [];
     if (!title) {
        errors.push('Title is Required')
     }
@@ -194,6 +197,13 @@ router.post('/new', async function (req, res, next) {
         // kör frågan för att skapa ett nytt inlägg
         const [rows] = await promisePool.query('INSERT INTO eho02forum (authorId, title, content) VALUES (?, ?, ?)', [id, sanitizeTitle, sanitizeBody]);      
         res.redirect('/'); 
+    }else{
+        res.render('new.njk', {
+            title: 'Nytt inlägg',
+            user: req.session.username,
+            msg: errors,
+        });
+        
     }
 });
 
@@ -210,4 +220,27 @@ router.get('/new', async function (req, res, next) {
     }
 });
 
+router.get('/profile', async function (req, res, next) {
+    if(!req.session.loggedin){
+        res.redirect('/login')
+    }else{
 
+    res.render('profile.njk', {
+        title: 'profile',
+    });
+    
+    }
+});
+
+
+
+
+router.post('/delete', async function (req, res, next) {
+    if(!req.session.loggedin){
+        res.redirect('/login')
+    }else{
+
+        await promisePool.query('DELETE FROM eho02users WHERE id  = (?)', [req.session.userId]);     
+        res.redirect('/logout')
+    }
+});
