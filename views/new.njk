@@ -1,10 +1,10 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<form action="/new" method="post">
+<form action="/new" method="post" class="new">
 
-    <label for="author">Användarnamn</label>
-    <p>{{user}}</p>
+    <label for="author">Användare: {{user}}</label>
+
 
     <label for="title">Titel</label>
     <input type="text" name="title" id="title">

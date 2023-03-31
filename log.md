@@ -13,3 +13,7 @@ Jag gjord css och satt ihop kodbitarna för att se till att alt funkade :)
 Jag ska jobba med säkerhet på sidan genom de visade metoderna. 
 
 Jag lyckades göra några säkerhets grejor men det förstörde något och nu får jag error 484 som jag måste fixa.
+
+## dag 4
+
+Jag måste fixa error 484 sedan göra lite säkerhets saker. 

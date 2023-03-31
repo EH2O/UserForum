@@ -189,4 +189,12 @@ body {
   gap: 1rem;
 }
 
+.new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 5rem;
+  gap: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */

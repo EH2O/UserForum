@@ -101,11 +101,11 @@ router.post('/register', async function(req, res, next){
     if (passwordConfirmation !== password){
        errors.push('Passwords do not match')
     } 
-    if (username && username.length <= 3){    
-       errors.push('Title must be at least 3 characters');    
+    if (username && username.length < 3){    
+       errors.push('Username must be at least 3 characters');    
     }
 
-    if (password && password.length <= 8){
+    if (password && password.length < 8){
         errors.push('Password must be at least 8 characters');
     }
 
@@ -118,15 +118,20 @@ router.post('/register', async function(req, res, next){
 
                 bcrypt.hash (password, 10, async function(err, hash){
                     await promisePool.query('INSERT INTO eho02users (name, password) VALUES (?, ?)', [username,hash]);
-                    res.redirect('/login');
-                });                
+               
+                });       
+                res.redirect('/login');         
             }
     }
+    if(errors.length !== 0){
+
+
         res.render('register.njk', {
             title: 'Register',
             msg: errors,
             
         });
+    }
     
     
 });
