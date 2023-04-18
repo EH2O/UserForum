@@ -20,5 +20,5 @@ Inget har direkt gått dåligt för jag har inte haft tid att lägga till nya fu
 
 ## Är jag nöjd? 
 
-Jag är nöjd med vad jag har gjort, däremot är det väldigt simpelt. Jag har inga direkt flashy funktioner på min sida och bara grunderna. Däremot grunderna är jag nöjd med. 
+Jag är nöjd med vad jag har gjort, däremot är det väldigt simpelt. Jag har inga direkt flashy funktioner på min sida och bara grunderna. Däremot grunderna är jag nöjd med mest med på grund av att det funkar men även för jag själv gillar hur koden är strukturerad. 
 

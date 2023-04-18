@@ -93,7 +93,7 @@ router.post('/register', async function(req, res, next){
     if (!username) {
       errors.push('Username is Required')
     }
-//    if(!validator.isAlphanumeric(username [locale, options])){
+//    if(!validator.isAlphanumeric(uername [locale, options])){
   //      errors.push('Username can only contain Letters and Numbers ')
    // }
 
